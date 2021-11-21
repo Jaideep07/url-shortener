@@ -8,32 +8,50 @@
   <title>Easy URL</title>
 </head>
 <body>
-  <div class="container">
-    <h1>URL Shrinker</h1>
-    <form action="/shortUrls" method="POST" class="my-4 form-inline">
-      <label for="fullUrl" class="sr-only">Url</label>
-      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
-      <button class="btn btn-success" type="submit">Shrink</button>
-    </form>
-    
-    <table class="table table-striped table-responsive">
-      <thead>
-        <tr>
-          <th>Full URL</th>
-          <th>Short URL</th>
-          <th>Clicks</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% shortUrls.forEach(shortUrl => { %>
-          <tr>
-            <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-            <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
-            <td><%= shortUrl.clicks %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </div>
+  <nav class="navbar navbar-light navbar-expand bg-light navigation-clean navbar-right">
+    <div class="container"><a class="navbar-brand" href="#">Easy URL</a>
+        <div id="navcol-1" class="collapse navbar-collapse text-light">
+          <a class="btn btn-primary ml-auto" role="button" href="#">Team Invincible</a>
+        </div>
+    </div>
+  </nav>
+
+
+  <header class="text-center text-white masthead" style="background:url('bg-masthead.jpg')no-repeat center center;background-size:cover;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto position-relative">
+                <h1 class="mb-5" style="color:#545b62; padding-top: 2em;">Shrink your URLs with ease!</h1>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
+              <form action="/shortUrls" method="POST" class="my-4 form-inline">
+                <label for="fullUrl" class="sr-only">Url</label>
+                <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+                <button class="btn btn-success" type="submit">Shrink</button>
+              </form>
+              <table class="table table-striped table-responsive">
+                <thead>
+                  <tr>
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th>Clicks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% shortUrls.forEach(shortUrl => { %>
+                    <tr>
+                      <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                      <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                      <td><%= shortUrl.clicks %></td>
+                    </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</header>
 </body>
 </html>
+
