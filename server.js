@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
-mongoose.connect('mongodb://localhost:27017/urlShortener', {
+mongoose.connect('mongodb+srv://urlshortener.3edgf.mongodb.net/myFirstDatabase?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority', {
   useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => console.log( 'Database Connected' ))
 .catch(err => console.log( err ));
